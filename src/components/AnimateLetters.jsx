@@ -41,14 +41,14 @@ const AnimateLetters = ({ text }) => {
         variants={container}
         initial="hidden"
         animate="show"
-        className="overflow-hidden mr-5 text-center flex mt-10 mx-10"
+        className="mr-5 justify-center items-center flex mt-10 px-10 text-white"
       >
         {letters.map((letter, index) => {
           return (
             <motion.span
               variants={item}
               key={index}
-              className="text-5xl font-bold drop-shadow-lg"
+              className="text-5xl text-inherit me text-center font-bold animate-[glow_1s_ease-in-out_infinite_alternate]"
             >
               {letter === " " ? "\u00A0" : letter}
             </motion.span>

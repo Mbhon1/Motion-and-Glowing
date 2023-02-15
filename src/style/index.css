@@ -5,3 +5,11 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  background: #000000;
+}
+
+.me {
+  color: white;
+}
