@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const Glowing = ({ text }) => {
-  const words = text.split(" ");
+const Paragraph = ({ myParagraph }) => {
+  const paragraphs = Array.from(myParagraph);
 
   const container = {
     hidden: { opacity: 0 },
@@ -41,17 +41,17 @@ const Glowing = ({ text }) => {
         variants={container}
         initial="hidden"
         animate="show"
-        className="overflow-hidden flex mt-10 pl-10"
+        className="flex items-center justify-center mt-10 -skew-y-12 hover:animate-bounce"
       >
-        {words.map((word, index) => {
+        {paragraphs.map((paragraph, index) => {
           return (
-            <motion.div
+            <motion.span
               variants={item}
               key={index}
-              className="text-5xl mr-5 text-center"
+              className="text-5xl text-inherit me text-center font-bold animate-[glow_1s_ease-in-out_infinite_alternate]"
             >
-              {word}
-            </motion.div>
+              {paragraph === " " ? "\u00A0" : paragraph}
+            </motion.span>
           );
         })}
       </motion.div>
@@ -59,4 +59,4 @@ const Glowing = ({ text }) => {
   );
 };
 
-export default Glowing;
+export default Paragraph;

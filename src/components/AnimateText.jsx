@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const AnimateLetters = ({ text }) => {
-  const letters = Array.from(text);
+const AnimateText = ({ text }) => {
+  const words = text.split(" ");
 
   const container = {
     hidden: { opacity: 0 },
@@ -41,17 +41,17 @@ const AnimateLetters = ({ text }) => {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex items-center justify-center mt-40 text-white -skew-y-12 hover:animate-spin"
+        className="flex pl-10 mt-10 overflow-hidden"
       >
-        {letters.map((letter, index) => {
+        {words.map((word, index) => {
           return (
-            <motion.span
+            <motion.div
               variants={item}
               key={index}
-              className="text-5xl text-inherit me text-center font-bold animate-[glow_1s_ease-in-out_infinite_alternate]"
+              className="mr-5 text-5xl text-center"
             >
-              {letter === " " ? "\u00A0" : letter}
-            </motion.span>
+              {word}
+            </motion.div>
           );
         })}
       </motion.div>
@@ -59,4 +59,4 @@ const AnimateLetters = ({ text }) => {
   );
 };
 
-export default AnimateLetters;
+export default AnimateText;
