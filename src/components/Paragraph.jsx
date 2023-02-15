@@ -41,7 +41,7 @@ const Paragraph = ({ myParagraph }) => {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex items-center justify-center mt-10 -skew-y-12 hover:animate-bounce"
+        className="flex items-center justify-center mt-10 -skew-y-12"
       >
         {paragraphs.map((paragraph, index) => {
           return (

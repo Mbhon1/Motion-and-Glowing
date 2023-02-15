@@ -41,7 +41,7 @@ const AnimateLetters = ({ text }) => {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex items-center justify-center mt-40 text-white -skew-y-12 hover:animate-spin"
+        className="flex items-center justify-center mt-40 text-white -skew-y-12 "
       >
         {letters.map((letter, index) => {
           return (
